@@ -63,7 +63,11 @@ time.set(20); // 设置起始时间为20秒
 **restart**
 重启计时，如果之前设置了起始时间， 则从起始时间开始运行。
 
-# Example
+
+## AMD 加载器支持
+对于require.js 加载器， 自动将自身定义为 ```timer``` 模块, 暴露Timer构造函数
+
+## Example
 
 ### 逆时计时
 ```javascript

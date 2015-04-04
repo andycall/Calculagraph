@@ -6,15 +6,17 @@ function Timer(){
     this.last = 0; // 0 increase , 1 decrease
 }
 
-Timer.prototype.increase = function(callback, interval, tick) {
+Timer.prototype.increase = function(callback, interval, tick, finish) {
 	var _this = this;
-	_this._curry(0)(callback, interval, tick);	
+	_this._curry(0)(callback, interval, tick, finish);
+	return _this;
 };
 
-Timer.prototype.decrease = function(callback, interval, tick) {
+Timer.prototype.decrease = function(callback, interval, tick, finish) {
 	var _this = this;
-	_this._curry(1)(callback, interval, tick);
-}
+	_this._curry(1)(callback, interval, tick, finish);
+	return _this;
+};
 
 Timer.prototype._curry = function(last){
 	var _this = this;
@@ -23,13 +25,14 @@ Timer.prototype._curry = function(last){
 		_this._set = _this.time;
 	}
 
-	return function(callback, interval, tick) {
+	return function(callback, interval, tick, finish) {
 		if(_this.isRunning) return false;
 
 		_this.isRunning = true;
 		_this._callback = callback;
 		_this._interval = interval;
 		_this._tick = tick || 1000;
+		_this._finish = finish || function(){};
 
 		_this.last = last;
 
@@ -46,6 +49,7 @@ Timer.prototype._curry = function(last){
 
 			if(_this.time < 0 || (interval && differences >= interval) ) {
 				_this.stop();
+				_this._finish();
 				return;
 			}
 
@@ -80,9 +84,9 @@ Timer.prototype.parse = function() {
 Timer.prototype.restore = function(){
 	var _this = this;
 	if(_this.last){
-		_this.decrease(_this._callback, _this._interval, _this._tick);
+		_this.decrease(_this._callback, _this._interval, _this._tick, _this._finish);
 	} else {
-		_this.increase(_this._callback, _this._interval, _this._tick);
+		_this.increase(_this._callback, _this._interval, _this._tick, _this._finish);
 	}
 };
 	
@@ -94,3 +98,10 @@ Timer.prototype.restart = function() {
     }
     _this.restore();
 };
+
+// Register as a named AMD module
+if ( typeof define === "function" && define.amd ) {
+	define( "timer", [], function() {
+		return Timer
+	});
+}

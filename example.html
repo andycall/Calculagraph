@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script src="timer.js"></script>
+<script>
+	var time = new Timer();
+
+	time.set(20);
+
+	time.decrease(function(time){
+		console.log(time);
+	}, 10, 500, function(){
+		console.log('finished');
+	});
+
+</script>
+</html>

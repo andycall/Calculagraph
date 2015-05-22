@@ -65,7 +65,7 @@ time.set(20); // 设置起始时间为20秒
 
 
 ## AMD 加载器支持
-对于require.js 加载器， 自动将自身定义为 ```timer``` 模块, 暴露Timer构造函数
+若检测到AMD加载器，暴露Timer构造函数，且不再将Timer暴露到全局下
 
 ## Example
 
@@ -94,6 +94,10 @@ time.increase(function(time){
 });
 
 ```
+
+## 当前用户
+
+* 阿里妈妈MUX:[http://mux.alimama.com/event/2015mothersday/index.html](http://mux.alimama.com/event/2015mothersday/index.html)
 
 
 

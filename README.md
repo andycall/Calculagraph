@@ -1,6 +1,8 @@
 # Timer
 多功能计时器
 
+Here is a [English edition](README_US.md)
+
 ##安装
 
 ### Step 1: 构建time对象

@@ -1,4 +1,17 @@
-;(function(global){
+;(function(name, definition){
+
+	var hasDefine = typeof define === 'function',
+		hasExport = typeof module !== 'undefined' && module.exports;
+
+	if(hasDefine) {
+		define(name, definition);
+	} else if(hasExport){
+		module.exports = definition();
+	} else {
+		this[name] = definition();
+	}
+
+})("Timer", function(){
 
 	function Timer(){
 		this.time = 0;
@@ -101,12 +114,5 @@
 		_this.restore();
 	};
 
-	// Register as a AMD module
-	if ( typeof define === "function" && define.amd ) {
-		define( function() {
-			return Timer
-		});
-	}else{
-		global.Timer = Timer
-	}
-})(this)
+	return Timer;
+});

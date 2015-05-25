@@ -1,0 +1,93 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish', './' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 verbose publish [ './' ]
+5 silly cache add args [ './', null ]
+6 verbose cache add spec ./
+7 silly cache add parsed spec { raw: './',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: './',
+7 silly cache add   spec: '/Users/andycall/Plug Library/Timer',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/andycall/.npm/timer/1.0.0/package.tgz not in flight; packing
+9 verbose tar pack [ '/Users/andycall/.npm/timer/1.0.0/package.tgz',
+9 verbose tar pack   '/Users/andycall/Plug Library/Timer' ]
+10 verbose tarball /Users/andycall/.npm/timer/1.0.0/package.tgz
+11 verbose folder /Users/andycall/Plug Library/Timer
+12 info prepublish timer@1.0.0
+13 verbose addLocalTarball adding from inside cache /Users/andycall/.npm/timer/1.0.0/package.tgz
+14 silly cache afterAdd timer@1.0.0
+15 verbose afterAdd /Users/andycall/.npm/timer/1.0.0/package/package.json not in flight; writing
+16 verbose afterAdd /Users/andycall/.npm/timer/1.0.0/package/package.json written
+17 silly publish { name: 'timer',
+17 silly publish   version: '1.0.0',
+17 silly publish   description: 'multifunctional calculagraph, support Node.js, Browser and RequireJS',
+17 silly publish   main: 'timer.js',
+17 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+17 silly publish   repository: { type: 'git', url: 'https://github.com/andycall/Timer' },
+17 silly publish   keywords: [ 'calculagraph' ],
+17 silly publish   author: { name: 'andycall' },
+17 silly publish   license: 'MIT',
+17 silly publish   bugs: { url: 'https://github.com/andycall/Timer/issues' },
+17 silly publish   homepage: 'https://github.com/andycall/Timer',
+17 silly publish   readme: '# Timer\n多功能计时器\n\n\n\n\n\n##安装\n\n```bash\nnpm install Timer\n```\n\n\n\n## 使用\n\n### 准备\n\n+ Node.js\n    ```javascript\n    var Timer = require(\'timer\');\n    ```\n\n+ Browser Global\n    ```javascript\n    console.log(Timer);\n    ```\n+ RequireJS\n    ```javascript\n    define([\'Timer\'], function(Timer){\n        console.log(Timer);\n    });\n    ```\n    \n### Step 1: 构建time对象\n\n```javascript\n\nvar time = new Timer();\n \n```\n\n### Step 2: 设置起始时间\n如果没有设置， 则默认为0。 当起始时间为0的时候， 逆时计时会自动停止。\n\n```javascript\n\ntime.set(20); // 设置起始时间为20秒\n\n```\n\n\n### Step 3: 绑定计时器\n可以看下面的例子\n\n\n### API\n\n**increase**\n递增计时绑定\n\n+ 参数： \n    - callback 每一个时刻触发的回调函数\n    - interval 总运行时间\n    - tick     每一个时刻的时间间隔\n    - finish   完成之后触发的回调函数\n\n**descrease**\n递减计时绑定\n\n+ 参数： \n    - callback 每一个时刻触发的回调函数\n    - interval 总运行时间\n    - tick     每一个时刻的时间间隔\n    - finish   完成之后触发的回调函数\n\n\n**set**\n设置起始的时间， 需要在调用decrease或者increase时运行\n+ 参数:\n    - time : 设置的时间， 单位是秒\n    \n**stop**\n停止计时， 同时清空计时状态。\n\n**parse**\n暂停计时， 保留计时状态\n\n**restore**\n恢复上一次暂停时的计时状态\n\n**restart**\n重启计时，如果之前设置了起始时间， 则从起始时间开始运行。\n\n\n## AMD 加载器支持\n若检测到AMD加载器，暴露Timer构造函数，且不再将Timer暴露到全局下\n\n## Example\n\n### 逆时计时\n```javascript\n    \nvar time = new Timer();\ntime.set(30);\ntime.decrease(function(time){\n    console.log(time);\n}, 30, 500, function(){\n    console.log(\'finishde\');\n});\n\n```\n\n### 顺时计时\n``` javascript\n\nvar time = new Timer();\ntime.set(15);\ntime.increase(function(time){\n    console.log(time);\n}, 20, 1000, function(){\n    console.log(\'finished\');\n});\n\n```\n\n## 当前用户\n\n* 阿里妈妈MUX:[http://mux.alimama.com/event/2015mothersday/index.html](http://mux.alimama.com/event/2015mothersday/index.html)\n\n\n\n\n\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: '933005446002eda8966551183c78093d43fcb20c',
+17 silly publish   _id: 'timer@1.0.0',
+17 silly publish   _shasum: '16ecd79352c85fa471080ee465f99015032dff79',
+17 silly publish   _from: '.' }
+18 silly mapToRegistry name timer
+19 silly mapToRegistry using default registry
+20 silly mapToRegistry registry https://registry.npmjs.org/
+21 silly mapToRegistry uri https://registry.npmjs.org/timer
+22 verbose publish registryBase https://registry.npmjs.org/
+23 silly publish uploading /Users/andycall/.npm/timer/1.0.0/package.tgz
+24 verbose request uri https://registry.npmjs.org/timer
+25 verbose request sending authorization for write operation
+26 info attempt registry request try #1 at 20:12:01
+27 verbose request using bearer token for auth
+28 verbose request id 316a5363c02a7d09
+29 http request PUT https://registry.npmjs.org/timer
+30 http 404 https://registry.npmjs.org/timer
+31 verbose headers { 'content-type': 'application/json',
+31 verbose headers   'cache-control': 'max-age=0',
+31 verbose headers   'content-length': '21',
+31 verbose headers   'accept-ranges': 'bytes',
+31 verbose headers   date: 'Mon, 25 May 2015 12:12:05 GMT',
+31 verbose headers   via: '1.1 varnish',
+31 verbose headers   connection: 'keep-alive',
+31 verbose headers   'x-served-by': 'cache-nrt6124-NRT',
+31 verbose headers   'x-cache': 'MISS',
+31 verbose headers   'x-cache-hits': '0',
+31 verbose headers   'x-timer': 'S1432555922.742656,VS0,VE2546' }
+32 verbose request invalidating /Users/andycall/.npm/registry.npmjs.org/timer on PUT
+33 error publish Failed PUT 404
+34 verbose stack Error: Not found : timer
+34 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:247:14)
+34 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+34 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:344:22)
+34 verbose stack     at Request.emit (events.js:110:17)
+34 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1239:14)
+34 verbose stack     at Request.emit (events.js:129:20)
+34 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1187:12)
+34 verbose stack     at IncomingMessage.emit (events.js:129:20)
+34 verbose stack     at _stream_readable.js:908:16
+34 verbose stack     at process._tickCallback (node.js:355:11)
+35 verbose statusCode 404
+36 verbose pkgid timer
+37 verbose cwd /Users/andycall/Plug Library/Timer
+38 error Darwin 14.1.0
+39 error argv "node" "/usr/local/bin/npm" "publish" "./"
+40 error node v0.12.2
+41 error npm  v2.7.4
+42 error code E404
+43 error 404 Not found : timer
+43 error 404
+43 error 404 'timer' is not in the npm registry.
+43 error 404 You should bug the author to publish it (or use the name yourself!)
+43 error 404
+43 error 404 Note that you can also install from a
+43 error 404 tarball, folder, http url, or git url.
+44 verbose exit [ 1, true ]

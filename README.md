@@ -1,8 +1,38 @@
 # Timer
 多功能计时器
 
+
+
+
+
 ##安装
 
+```bash
+npm install Timer
+```
+
+
+
+## 使用
+
+### 准备
+
++ Node.js
+    ```javascript
+    var Timer = require('timer');
+    ```
+
++ Browser Global
+    ```javascript
+    console.log(Timer);
+    ```
++ RequireJS
+    ```javascript
+    define(['Timer'], function(Timer){
+        console.log(Timer);
+    });
+    ```
+    
 ### Step 1: 构建time对象
 
 ```javascript

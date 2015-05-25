@@ -3,6 +3,32 @@ multifunctional calculagraph
 
 ##Install
 
+```bash
+npm install Timer
+```
+
+
+
+## How to Use
+
+### Prepare
+
++ Node.js
+    ```javascript
+    var Timer = require('timer');
+    ```
+
++ Browser Global
+    ```javascript
+    console.log(Timer);
+    ```
++ RequireJS
+    ```javascript
+    define(['Timer'], function(Timer){
+        console.log(Timer);
+    });
+    ```
+    
 ### Step 1: construct a new time object
 
 ```javascript

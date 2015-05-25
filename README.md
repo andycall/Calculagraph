@@ -1,9 +1,7 @@
 # Calculagraph
 多功能计时器
 
-
-
-
+Here is a [English edition](README_US.md)
 
 ##安装
 
@@ -18,15 +16,19 @@ npm install Calculagraph
 ### 准备
 
 + Node.js
+
     ```javascript
     var Calculagraph = require('Calculagraph');
     ```
 
 + Browser Global
+
     ```javascript
     console.log(Calculagraph);
     ```
+
 + RequireJS
+
     ```javascript
     define(['Calculagraph'], function(Calculagraph){
         console.log(Calculagraph);

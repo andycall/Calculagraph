@@ -7,29 +7,31 @@ multifunctional calculagraph
 npm install Calculagraph
 ```
 
-
-
 ## How to Use
 
 ### Prepare
 
 + Node.js
+
     ```javascript
     var Calculagraph = require('Calculagraph');
     ```
 
 + Browser Global
+    
     ```javascript
     console.log(Calculagraph);
     ```
+
 + RequireJS
+
     ```javascript
     define(['Calculagraph'], function(Calculagraph){
         console.log(Calculagraph);
     });
     ```
 
-### Step 1: construct a new time object
+### Step 1: setup a new time object
 
 ```javascript
 
@@ -37,7 +39,7 @@ var time = new Calculagraph();
  
 ```
 
-### Step 2: set up your start time
+### Step 2: config your start time
 It will be 0 as default, when start time set to 0, the decrease time will be stoped.
 
 ```javascript
@@ -47,7 +49,8 @@ time.set(20); // set start time to 20 second
 ```
 
 
-### Step 3: bind Calculagraph
+### Step 3: start your calculagraph
+
 here are some examples
 
 ### API

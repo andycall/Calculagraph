@@ -1,4 +1,4 @@
-# Timer
+# Calculagraph
 多功能计时器
 
 
@@ -8,7 +8,7 @@
 ##安装
 
 ```bash
-npm install Timer
+npm install Calculagraph
 ```
 
 
@@ -19,17 +19,17 @@ npm install Timer
 
 + Node.js
     ```javascript
-    var Timer = require('timer');
+    var Calculagraph = require('Calculagraph');
     ```
 
 + Browser Global
     ```javascript
-    console.log(Timer);
+    console.log(Calculagraph);
     ```
 + RequireJS
     ```javascript
-    define(['Timer'], function(Timer){
-        console.log(Timer);
+    define(['Calculagraph'], function(Calculagraph){
+        console.log(Calculagraph);
     });
     ```
     
@@ -37,7 +37,7 @@ npm install Timer
 
 ```javascript
 
-var time = new Timer();
+var time = new Calculagraph();
  
 ```
 
@@ -95,14 +95,14 @@ time.set(20); // 设置起始时间为20秒
 
 
 ## AMD 加载器支持
-若检测到AMD加载器，暴露Timer构造函数，且不再将Timer暴露到全局下
+若检测到AMD加载器，暴露Calculagraph构造函数，且不再将Calculagraph暴露到全局下
 
 ## Example
 
 ### 逆时计时
 ```javascript
     
-var time = new Timer();
+var time = new Calculagraph();
 time.set(30);
 time.decrease(function(time){
     console.log(time);
@@ -115,7 +115,7 @@ time.decrease(function(time){
 ### 顺时计时
 ``` javascript
 
-var time = new Timer();
+var time = new Calculagraph();
 time.set(15);
 time.increase(function(time){
     console.log(time);

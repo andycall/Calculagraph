@@ -1,14 +1,14 @@
 {
-  "name": "timer",
-  "version": "1.0.0",
+  "name": "calculagraph",
+  "version": "0.0.1",
   "description": "multifunctional calculagraph, support Node.js, Browser and RequireJS",
-  "main": "timer.js",
+  "main": "calculagraph.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/andycall/Timer"
+    "url": "https://github.com/andycall/Calculagraph"
   },
   "keywords": [
     "calculagraph"
@@ -16,7 +16,7 @@
   "author": "andycall",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andycall/Timer/issues"
+    "url": "https://github.com/andycall/Calculagraph/issues"
   },
-  "homepage": "https://github.com/andycall/Timer"
+  "homepage": "https://github.com/andycall/Calculagraph"
 }

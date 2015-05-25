@@ -1,10 +1,10 @@
-# Timer
+# Calculagraph
 multifunctional calculagraph
 
 ##Install
 
 ```bash
-npm install Timer
+npm install Calculagraph
 ```
 
 
@@ -15,25 +15,25 @@ npm install Timer
 
 + Node.js
     ```javascript
-    var Timer = require('timer');
+    var Calculagraph = require('Calculagraph');
     ```
 
 + Browser Global
     ```javascript
-    console.log(Timer);
+    console.log(Calculagraph);
     ```
 + RequireJS
     ```javascript
-    define(['Timer'], function(Timer){
-        console.log(Timer);
+    define(['Calculagraph'], function(Calculagraph){
+        console.log(Calculagraph);
     });
     ```
-    
+
 ### Step 1: construct a new time object
 
 ```javascript
 
-var time = new Timer();
+var time = new Calculagraph();
  
 ```
 
@@ -47,7 +47,7 @@ time.set(20); // set start time to 20 second
 ```
 
 
-### Step 3: bind timer
+### Step 3: bind Calculagraph
 here are some examples
 
 ### API
@@ -90,14 +90,14 @@ restore last time status when parsed
 restart timing, and set time to start time.
 
 ## Support for AMD loader
-export the Timer constructor
+export the Calculagraph constructor
 
 ## Example
 
 ### anticlockwise timing
 ```javascript
     
-var time = new Timer();
+var time = new Calculagraph();
 time.set(30);
 time.decrease(function(time){
     console.log(time);
@@ -110,7 +110,7 @@ time.decrease(function(time){
 ### clockwise
 ``` javascript
 
-var time = new Timer();
+var time = new Calculagraph();
 time.set(15);
 time.increase(function(time){
     console.log(time);

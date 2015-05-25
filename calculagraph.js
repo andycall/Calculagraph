@@ -11,9 +11,9 @@
 		this[name] = definition();
 	}
 
-})("Timer", function(){
+})("Calculagraph", function(){
 
-	function Timer(){
+	function Calculagraph(){
 		this.time = 0;
 		this.isRunning = false;
 		this._callback = null;
@@ -21,19 +21,19 @@
 		this.last = 0; // 0 increase , 1 decrease
 	}
 
-	Timer.prototype.increase = function(callback, interval, tick, finish) {
+	Calculagraph.prototype.increase = function(callback, interval, tick, finish) {
 		var _this = this;
 		_this._curry(0)(callback, interval, tick, finish);
 		return _this;
 	};
 
-	Timer.prototype.decrease = function(callback, interval, tick, finish) {
+	Calculagraph.prototype.decrease = function(callback, interval, tick, finish) {
 		var _this = this;
 		_this._curry(1)(callback, interval, tick, finish);
 		return _this;
 	};
 
-	Timer.prototype._curry = function(last){
+	Calculagraph.prototype._curry = function(last){
 		var _this = this;
 
 		if(last) {
@@ -53,7 +53,7 @@
 
 			var startTime = +new Date();
 
-			(function timer(){
+			(function Calculagraph(){
 				var now = +new Date(),
 					differences = parseInt( (now - startTime) / 1000 );
 
@@ -69,13 +69,13 @@
 				}
 
 				_this.times = setTimeout(function(){
-					timer();
+					Calculagraph();
 				}, tick);
 			})();
 		}
 	};
 
-	Timer.prototype.set = function(time) {
+	Calculagraph.prototype.set = function(time) {
 		var _this = this;
 		if(_this.isRunning) return false;
 		_this.time = time * 1000;
@@ -83,20 +83,20 @@
 	};
 
 
-	Timer.prototype.stop = function() {
+	Calculagraph.prototype.stop = function() {
 		var _this = this;
 		clearTimeout(_this.times);
 		_this.time = null;
 		_this.isRunning = false;
 	};
 
-	Timer.prototype.parse = function() {
+	Calculagraph.prototype.parse = function() {
 		var _this = this;
 		clearTimeout(_this.times);
 		_this.isRunning = false;
 	};
 
-	Timer.prototype.restore = function(){
+	Calculagraph.prototype.restore = function(){
 		var _this = this;
 		if(_this.last){
 			_this.decrease(_this._callback, _this._interval, _this._tick, _this._finish);
@@ -105,7 +105,7 @@
 		}
 	};
 		
-	Timer.prototype.restart = function() {
+	Calculagraph.prototype.restart = function() {
 		var _this = this;
 		_this.stop();
 		if(_this._time) {
@@ -114,5 +114,5 @@
 		_this.restore();
 	};
 
-	return Timer;
+	return Calculagraph;
 });

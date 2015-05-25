@@ -1,6 +1,6 @@
 {
   "name": "calculagraph",
-  "version": "0.2.0",
+  "version": "1.0",
   "description": "multifunctional calculagraph, support Node.js, Browser and RequireJS",
   "main": "calculagraph.js",
   "scripts": {

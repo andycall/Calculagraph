@@ -4,7 +4,7 @@ multifunctional calculagraph
 ##Install
 
 ```bash
-npm install Calculagraph
+npm install calculagraph
 ```
 
 ## How to Use
@@ -14,7 +14,7 @@ npm install Calculagraph
 + Node.js
 
     ```javascript
-    var Calculagraph = require('Calculagraph');
+    var Calculagraph = require('calculagraph');
     ```
 
 + Browser Global
